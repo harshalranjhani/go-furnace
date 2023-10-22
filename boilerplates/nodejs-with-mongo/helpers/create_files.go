@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"os"
 
-	"github.com/harshalranjhani/go-furnace/templates"
+	"github.com/harshalranjhani/go-furnace/boilerplates/nodejs-with-mongo/templates"
 )
 
 func createFile(fileName, templateContent string) {
