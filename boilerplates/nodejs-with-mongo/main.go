@@ -1,6 +1,8 @@
 package nodejswithmongo
 
 import (
+	"sync"
+
 	"github.com/fatih/color"
 
 	"github.com/harshalranjhani/go-furnace/boilerplates/nodejs-with-mongo/helpers"
@@ -8,7 +10,8 @@ import (
 	"gopkg.in/cheggaaa/pb.v1"
 )
 
-func CreateNodeJsWithMongo() {
+func CreateNodeJsWithMongo(wg *sync.WaitGroup) {
+	defer wg.Done()
 	progress := pb.StartNew(100)
 	for i := 0; i < 100; i++ {
 		progress.Increment()
