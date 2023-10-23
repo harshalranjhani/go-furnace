@@ -2,8 +2,22 @@ package shell
 
 import (
 	"fmt"
+	"os"
 	"os/exec"
+
+	"github.com/harshalranjhani/go-furnace/boilerplates/nodejs-with-mongo/helpers"
 )
+
+func ChangeDirectories() {
+	// Get the desired directory
+	dir := helpers.ParentFolderName
+
+	// Change the working directory
+	if err := os.Chdir(dir); err != nil {
+		fmt.Println("Error changing directory:", err)
+		return
+	}
+}
 
 func InitializeNPM() {
 	app := "npm"

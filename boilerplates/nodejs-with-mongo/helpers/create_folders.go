@@ -6,9 +6,9 @@ import (
 )
 
 const (
-	controllersFolder = "controllers"
-	routesFolder      = "routes"
-	modelsFolder      = "models"
+	controllersFolder = ParentFolderName + "/controllers"
+	routesFolder      = ParentFolderName + "/routes"
+	modelsFolder      = ParentFolderName + "/models"
 )
 
 func createFolder(folderName string) {
@@ -19,8 +19,13 @@ func createFolder(folderName string) {
 	}
 }
 
+const (
+	ParentFolderName = "nodejswithmongo-go-furnace"
+)
+
 func CreateFolders() {
 	// Create folders
+	createFolder(ParentFolderName)
 	createFolder(routesFolder)
 	createFolder(modelsFolder)
 	createFolder(controllersFolder)

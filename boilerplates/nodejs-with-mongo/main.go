@@ -21,6 +21,9 @@ func CreateNodeJsWithMongo() {
 
 	color.Green("Project initialized.")
 
+	// change directories
+	shell.ChangeDirectories()
+
 	// initialize npm
 	shell.InitializeNPM()
 

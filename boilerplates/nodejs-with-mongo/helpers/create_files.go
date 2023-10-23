@@ -35,6 +35,6 @@ func CreateFiles() {
 	createFile(controllersFolder+"/start.js", templates.ControllerTemplate)
 
 	// create server.js
-	createFile("server.js", templates.ServerTemplate)
+	createFile(ParentFolderName+"/server.js", templates.ServerTemplate)
 	fmt.Println("Project structure created successfully.")
 }
