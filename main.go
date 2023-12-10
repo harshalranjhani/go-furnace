@@ -4,6 +4,7 @@ import (
 	"sync"
 
 	createreactapp "github.com/harshalranjhani/go-furnace/boilerplates/create-react-app"
+	"github.com/harshalranjhani/go-furnace/boilerplates/electron"
 	nestjs "github.com/harshalranjhani/go-furnace/boilerplates/nest-js"
 	nodejswithmongo "github.com/harshalranjhani/go-furnace/boilerplates/nodejs-with-mongo"
 	"github.com/rivo/tview"
@@ -19,6 +20,7 @@ var optionsMap = map[string]func(){
 	"CRA - Typescript":    func() { createreactapp.CreateReactApp("go-furnace-ts", true, wg) },
 	"Nodejs With MongoDB": func() { nodejswithmongo.CreateNodeJsWithMongo(wg) },
 	"Nest.js":             func() { nestjs.CreateNestApp("go-furance-nest-js", wg) },
+	"Electron":            func() { electron.CreateElectronApp(wg) },
 }
 
 func executeSelected(wg *sync.WaitGroup) {
@@ -43,7 +45,8 @@ func main() {
 	list := tview.NewList().
 		AddItem("CRA - Javascript", "Create React App Boilerplate with Javascript template.", 'a', func() { toggleItem("CRA - Javascript") }).
 		AddItem("CRA - Typescript", "Create React App Boilerplate with Typescript template.", 'b', func() { toggleItem("CRA - Typescript") }).
-		AddItem("Nest.js", "Create Nest.js project template.", 'c', func() { toggleItem("Nest.js") }).
+		AddItem("Electron", "Create Electron project template.", 'c', func() { toggleItem("Electron") }).
+		// AddItem("Nest.js", "Create Nest.js project template.", 'c', func() { toggleItem("Nest.js") }).
 		// AddItem("Nodejs with MongoDB", "Nodejs boilerplate with MongoDB setup running on localhost:8080", 'c', func() { toggleItem("Nodejs with MongoDB") }).
 		AddItem("Execute", "Execute the selected commands", 'd', func() {
 			executeSelected(wg)
